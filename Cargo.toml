@@ -8,6 +8,9 @@ readme = "README.md"
 license = "MIT OR Apache-2.0"
 keywords = ["utility", "optimization", "data-structures", "cache", "library"]
 categories = ["caching", "data-structures"]
+homepage = "https://crates.io/crates/cachr"
+repository = "https://github.com/AlexanderHarrison/cachr"
+documentation = "https://docs.rs/cachr/latest/cachr"
 
 [dev-dependencies]
 brunch = "0.5"
