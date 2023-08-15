@@ -1,0 +1,18 @@
+[package]
+name = "cachr"
+version = "1.0.0"
+edition = "2021"
+
+description = "Simple shared access caching struct"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+keywords = ["utility", "optimization", "data-structures", "cache", "library"]
+categories = ["caching", "data-structures"]
+
+[dev-dependencies]
+brunch = "0.5"
+elsa = "1.9"
+
+[[bench]]
+name = "bench"
+harness = false
