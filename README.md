@@ -1,5 +1,8 @@
 # Cachr
 
+[![Current Version](https://img.shields.io/crates/v/cachr.svg)](https://crates.io/crates/cachr)
+[![License: MIT/Apache-2.0](https://img.shields.io/crates/l/cachr.svg)]()
+
 A simple rust crate providing shared read and write access to a hashmap, by disallowing removal of entries.
 This is useful for caching, where data will only ever be read or included in the cache.
 
