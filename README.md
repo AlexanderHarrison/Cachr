@@ -1,6 +1,6 @@
 # Cachr
 
-A simple structure providing shared read and write access to a hashmap, by disallowing removal of entries.
+A simple rust crate providing shared read and write access to a hashmap, by disallowing removal of entries.
 This is useful for caching, where data will only ever be read or included in the cache.
 
 ```rust
@@ -33,7 +33,7 @@ You can emulate this behaviour by passing in a mutable reference
 to some cache struct every time you call a function needing it, 
 but this rapidly becomes tedious and unnecessary.
 
-### Comparison to [https://crates.io/crates/elsa/1.9.0](elsa)?
+### Comparison to [elsa](https://crates.io/crates/elsa/1.9.0)?
 
 Elsa is broader in features, but is more complex than Cachr.
 This crate only allows Boxed objects, only provides a HashMap implementation,
