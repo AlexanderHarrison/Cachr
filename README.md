@@ -33,7 +33,7 @@ You can emulate this behaviour by passing in a mutable reference
 to some cache struct every time you call a function needing it, 
 but this rapidly becomes tedious and unnecessary.
 
-### Comparison to [elsa](https://crates.io/crates/elsa/1.9.0)?
+### Comparison to [elsa](https://crates.io/crates/elsa)?
 
 Elsa is broader in features, but is more complex than Cachr.
 This crate only allows Boxed objects, only provides a HashMap implementation,
