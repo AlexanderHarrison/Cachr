@@ -15,8 +15,19 @@ impl<K: Hash + Eq, T: ?Sized> Cachr<K, T> {
     }
 
     #[inline(always)]
+    /// Does nothing if key has already been inserted.
     pub fn insert_boxed(&self, key: K, value: Box<T>) {
-        unsafe { &mut *self.inner.get() }.insert(key, value);
+        let inner = unsafe { &mut *self.inner.get() };
+
+        use std::collections::hash_map::Entry;
+        match inner.entry(key) {
+            Entry::Occupied(_) => {
+                // ignore if key already inserted
+            }
+            Entry::Vacant(e) => {
+                e.insert(value);
+            }
+        }
     }
 
     #[inline(always)]
@@ -42,9 +53,19 @@ impl<K: Hash + Eq, T: ?Sized> Cachr<K, T> {
 
 impl<K: Hash + Eq, T> Cachr<K, T> {
     #[inline(always)]
+    /// Does nothing if key has already been inserted.
     pub fn insert(&self, key: K, value: T) {
-        let boxed = Box::new(value);
-        self.insert_boxed(key, boxed);
+        let inner = unsafe { &mut *self.inner.get() };
+
+        use std::collections::hash_map::Entry;
+        match inner.entry(key) {
+            Entry::Occupied(_) => {
+                // ignore if key already inserted
+            }
+            Entry::Vacant(e) => {
+                e.insert(Box::new(value));
+            }
+        }
     }
 
     #[inline(always)]
